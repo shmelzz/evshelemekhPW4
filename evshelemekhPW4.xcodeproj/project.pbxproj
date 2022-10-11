@@ -10,9 +10,15 @@
 		CC73668828F5A49900499E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73668728F5A49900499E23 /* AppDelegate.swift */; };
 		CC73668A28F5A49900499E23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73668928F5A49900499E23 /* SceneDelegate.swift */; };
 		CC73668C28F5A49900499E23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73668B28F5A49900499E23 /* ViewController.swift */; };
-		CC73668F28F5A49900499E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC73668D28F5A49900499E23 /* Main.storyboard */; };
 		CC73669128F5A49900499E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC73669028F5A49900499E23 /* Assets.xcassets */; };
 		CC73669428F5A49900499E23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC73669228F5A49900499E23 /* LaunchScreen.storyboard */; };
+		CC73669C28F5BA7600499E23 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73669B28F5BA7600499E23 /* NotesViewController.swift */; };
+		CC73669E28F5BE5900499E23 /* CALayerShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73669D28F5BE5900499E23 /* CALayerShadow.swift */; };
+		CC7366A028F5BE7000499E23 /* UISwiftPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73669F28F5BE7000499E23 /* UISwiftPin.swift */; };
+		CC7366A228F5BE8B00499E23 /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7366A128F5BE8B00499E23 /* ColorPaletteView.swift */; };
+		CC7366A428F5BE9F00499E23 /* UIColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7366A328F5BE9F00499E23 /* UIColorComponents.swift */; };
+		CC7366A628F5C67F00499E23 /* ShortNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7366A528F5C67F00499E23 /* ShortNote.swift */; };
+		CC7366A828F5C92000499E23 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7366A728F5C92000499E23 /* NoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +26,16 @@
 		CC73668728F5A49900499E23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC73668928F5A49900499E23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CC73668B28F5A49900499E23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CC73668E28F5A49900499E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC73669028F5A49900499E23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC73669328F5A49900499E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC73669528F5A49900499E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC73669B28F5BA7600499E23 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		CC73669D28F5BE5900499E23 /* CALayerShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerShadow.swift; sourceTree = "<group>"; };
+		CC73669F28F5BE7000499E23 /* UISwiftPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwiftPin.swift; sourceTree = "<group>"; };
+		CC7366A128F5BE8B00499E23 /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
+		CC7366A328F5BE9F00499E23 /* UIColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorComponents.swift; sourceTree = "<group>"; };
+		CC7366A528F5C67F00499E23 /* ShortNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNote.swift; sourceTree = "<group>"; };
+		CC7366A728F5C92000499E23 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +71,13 @@
 				CC73668728F5A49900499E23 /* AppDelegate.swift */,
 				CC73668928F5A49900499E23 /* SceneDelegate.swift */,
 				CC73668B28F5A49900499E23 /* ViewController.swift */,
-				CC73668D28F5A49900499E23 /* Main.storyboard */,
+				CC73669D28F5BE5900499E23 /* CALayerShadow.swift */,
+				CC73669F28F5BE7000499E23 /* UISwiftPin.swift */,
+				CC7366A128F5BE8B00499E23 /* ColorPaletteView.swift */,
+				CC7366A328F5BE9F00499E23 /* UIColorComponents.swift */,
+				CC73669B28F5BA7600499E23 /* NotesViewController.swift */,
+				CC7366A728F5C92000499E23 /* NoteCell.swift */,
+				CC7366A528F5C67F00499E23 /* ShortNote.swift */,
 				CC73669028F5A49900499E23 /* Assets.xcassets */,
 				CC73669228F5A49900499E23 /* LaunchScreen.storyboard */,
 				CC73669528F5A49900499E23 /* Info.plist */,
@@ -127,7 +145,6 @@
 			files = (
 				CC73669428F5A49900499E23 /* LaunchScreen.storyboard in Resources */,
 				CC73669128F5A49900499E23 /* Assets.xcassets in Resources */,
-				CC73668F28F5A49900499E23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +155,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC73669C28F5BA7600499E23 /* NotesViewController.swift in Sources */,
 				CC73668C28F5A49900499E23 /* ViewController.swift in Sources */,
+				CC7366A228F5BE8B00499E23 /* ColorPaletteView.swift in Sources */,
 				CC73668828F5A49900499E23 /* AppDelegate.swift in Sources */,
+				CC7366A028F5BE7000499E23 /* UISwiftPin.swift in Sources */,
+				CC7366A428F5BE9F00499E23 /* UIColorComponents.swift in Sources */,
 				CC73668A28F5A49900499E23 /* SceneDelegate.swift in Sources */,
+				CC7366A828F5C92000499E23 /* NoteCell.swift in Sources */,
+				CC73669E28F5BE5900499E23 /* CALayerShadow.swift in Sources */,
+				CC7366A628F5C67F00499E23 /* ShortNote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CC73668D28F5A49900499E23 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC73668E28F5A49900499E23 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC73669228F5A49900499E23 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,9 +307,9 @@
 				INFOPLIST_FILE = evshelemekhPW4/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,9 +334,9 @@
 				INFOPLIST_FILE = evshelemekhPW4/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
