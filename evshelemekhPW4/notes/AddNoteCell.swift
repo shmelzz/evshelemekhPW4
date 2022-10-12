@@ -1,17 +1,17 @@
-//
-//  NoteCell.swift
-//  evshelemekhPW4
-//
-//  Created by Lisa Shell on 11.10.2022.
-//
 
 import UIKit
 
-final class NoteCell: UITableViewCell {
+protocol AddNoteDelegate: AnyObject {
+    func newNoteAdded(note: ShortNote)
+}
+
+final class AddNoteCell: UITableViewCell {
     
     static let reuseIdentifier = "AddNoteCell"
     private var textView = UITextView()
     public var addButton = UIButton()
+    
+    var delegate: AddNoteDelegate?
     
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -54,13 +54,11 @@ final class NoteCell: UITableViewCell {
         stackView.pin(to: contentView, [.left: 16, .top: 16, .right: 16, .bottom: 16])
         contentView.backgroundColor = .systemGray5
     }
-    
-    func configure(note: ShortNote) {
-        
-    }
      
     @objc
     private func addButtonTapped(_ sender: UIButton) {
-        
+        // updateUI()
+        delegate?.newNoteAdded(note: ShortNote(text: textView.text))
+        // clearTextView()
     }
 }

@@ -155,6 +155,14 @@ class ViewController: UIViewController {
     func notesButtonPressed() {
         let generator = UIImpactFeedbackGenerator(style: .rigid)
         generator.impactOccurred()
+        
+        let notesViewController = NotesViewController()
+        if let sheetController = notesViewController.sheetPresentationController {
+          sheetController.detents = [.medium(), .large()]
+          sheetController.preferredCornerRadius = 4
+          sheetController.prefersGrabberVisible = true
+        }
+        present(notesViewController, animated: true, completion: nil)
     }
     
     @objc
@@ -165,7 +173,7 @@ class ViewController: UIViewController {
     
     private func setupMenuButtons() {
         let paletteButton = makeMenuButton(title: "🎨")
-        let notesButton = makeMenuButton(title: "🎋")
+        let notesButton = makeMenuButton(title: "📝")
         let mountButton = makeMenuButton(title: "🌋")
         
         // haptic response for every button

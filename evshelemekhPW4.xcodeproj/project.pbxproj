@@ -19,6 +19,7 @@
 		CC7366A428F5BE9F00499E23 /* UIColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7366A328F5BE9F00499E23 /* UIColorComponents.swift */; };
 		CC7366A628F5C67F00499E23 /* ShortNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7366A528F5C67F00499E23 /* ShortNote.swift */; };
 		CC7366A828F5C92000499E23 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7366A728F5C92000499E23 /* NoteCell.swift */; };
+		CCC056C528F6D99400EC894A /* AddNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC056C428F6D99400EC894A /* AddNoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CC7366A328F5BE9F00499E23 /* UIColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorComponents.swift; sourceTree = "<group>"; };
 		CC7366A528F5C67F00499E23 /* ShortNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNote.swift; sourceTree = "<group>"; };
 		CC7366A728F5C92000499E23 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		CCC056C428F6D99400EC894A /* AddNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,21 +70,38 @@
 		CC73668628F5A49900499E23 /* evshelemekhPW4 */ = {
 			isa = PBXGroup;
 			children = (
+				CCC056C828F6DBFD00EC894A /* notes */,
+				CCC056C728F6DBDF00EC894A /* colorPalette */,
 				CC73668728F5A49900499E23 /* AppDelegate.swift */,
 				CC73668928F5A49900499E23 /* SceneDelegate.swift */,
 				CC73668B28F5A49900499E23 /* ViewController.swift */,
 				CC73669D28F5BE5900499E23 /* CALayerShadow.swift */,
 				CC73669F28F5BE7000499E23 /* UISwiftPin.swift */,
-				CC7366A128F5BE8B00499E23 /* ColorPaletteView.swift */,
-				CC7366A328F5BE9F00499E23 /* UIColorComponents.swift */,
-				CC73669B28F5BA7600499E23 /* NotesViewController.swift */,
-				CC7366A728F5C92000499E23 /* NoteCell.swift */,
-				CC7366A528F5C67F00499E23 /* ShortNote.swift */,
 				CC73669028F5A49900499E23 /* Assets.xcassets */,
 				CC73669228F5A49900499E23 /* LaunchScreen.storyboard */,
 				CC73669528F5A49900499E23 /* Info.plist */,
 			);
 			path = evshelemekhPW4;
+			sourceTree = "<group>";
+		};
+		CCC056C728F6DBDF00EC894A /* colorPalette */ = {
+			isa = PBXGroup;
+			children = (
+				CC7366A128F5BE8B00499E23 /* ColorPaletteView.swift */,
+				CC7366A328F5BE9F00499E23 /* UIColorComponents.swift */,
+			);
+			path = colorPalette;
+			sourceTree = "<group>";
+		};
+		CCC056C828F6DBFD00EC894A /* notes */ = {
+			isa = PBXGroup;
+			children = (
+				CC73669B28F5BA7600499E23 /* NotesViewController.swift */,
+				CC7366A728F5C92000499E23 /* NoteCell.swift */,
+				CCC056C428F6D99400EC894A /* AddNoteCell.swift */,
+				CC7366A528F5C67F00499E23 /* ShortNote.swift */,
+			);
+			path = notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +184,7 @@
 				CC7366A828F5C92000499E23 /* NoteCell.swift in Sources */,
 				CC73669E28F5BE5900499E23 /* CALayerShadow.swift in Sources */,
 				CC7366A628F5C67F00499E23 /* ShortNote.swift in Sources */,
+				CCC056C528F6D99400EC894A /* AddNoteCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

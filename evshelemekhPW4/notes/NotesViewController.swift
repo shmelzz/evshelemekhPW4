@@ -10,7 +10,11 @@ import UIKit
 final class NotesViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private var dataSource = [ShortNote]()
+    private var dataSource = [
+        ShortNote(text: "a"),
+        ShortNote(text: "b"),
+        ShortNote(text: "c")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,7 @@ final class NotesViewController: UIViewController {
     }
     
     private func setupView() {
-        
+        setupTableView()
         setupNavBar()
     }
     
@@ -35,8 +39,8 @@ final class NotesViewController: UIViewController {
     
     private func setupTableView() {
         tableView.register(NoteCell.self, forCellReuseIdentifier: NoteCell.reuseIdentifier)
+        tableView.register(AddNoteCell.self, forCellReuseIdentifier: AddNoteCell.reuseIdentifier)
         
-        view.addSubview(tableView)
         tableView.backgroundColor = .clear
         tableView.keyboardDismissMode = .onDrag
         tableView.dataSource = self
@@ -54,19 +58,44 @@ final class NotesViewController: UIViewController {
 
 extension NotesViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        switch section {
+        case 0:
+            return 1
+        default:
+            return dataSource.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let note = dataSource[indexPath.row]
-        if let noteCell = tableView.dequeueReusableCell(withIdentifier:
-            NoteCell.reuseIdentifier, for: indexPath) as? NoteCell {
-                noteCell.configure(note: note)
-                return noteCell
+        switch indexPath.section {
+        case 0:
+            if let addNewCell = tableView.dequeueReusableCell(
+                withIdentifier: AddNoteCell.reuseIdentifier, for: indexPath) as? AddNoteCell {
+            addNewCell.delegate = self
+            return addNewCell
+            }
+        default:
+            let note = dataSource[indexPath.row]
+            if let noteCell = tableView.dequeueReusableCell(withIdentifier:
+                NoteCell.reuseIdentifier, for: indexPath) as? NoteCell {
+                    // noteCell.configure(note: note)
+                    return noteCell
+            }
         }
         return UITableViewCell()
     }
 }
 
 extension NotesViewController: UITableViewDelegate {}
+
+extension NotesViewController: AddNoteDelegate {
+    func newNoteAdded(note: ShortNote) {
+        dataSource.insert(note, at: 0)
+        tableView.reloadData()
+    }
+}
