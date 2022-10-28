@@ -21,6 +21,7 @@ final class NotesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupView()
+        getSavedNotes()
     }
     
     // MARK: - View setup
@@ -42,7 +43,6 @@ final class NotesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
-        
         tableView.pin(to: self.view)
     }
 }
@@ -81,13 +81,26 @@ extension NotesViewController: UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    
+    private func saveNotes(){
+        if let encoded = try? JSONEncoder().encode(dataSource) {
+            UserDefaults.standard.set(encoded, forKey: "dataSource")
+        }
+    }
+    
+    private func getSavedNotes() {
+        if let data = UserDefaults.standard.object(forKey: "dataSource") as? Data,
+           let notesList = try? JSONDecoder().decode([ShortNote].self, from: data) {
+            dataSource = notesList
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
 extension NotesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
         let delete = UIContextualAction(style: .destructive,
                                         title: "Delete") { [weak self] (action, view, completionHandler) in
             self?.handleDelete(indexPath: indexPath)
@@ -95,13 +108,13 @@ extension NotesViewController: UITableViewDelegate {
         }
         delete.backgroundColor = .systemRed
         delete.image = UIImage(systemName: "trash")
-        
-        let configuration = UISwipeActionsConfiguration(actions: [delete])
-        return configuration
+
+        return UISwipeActionsConfiguration(actions: [delete])
     }
     
     private func handleDelete(indexPath: IndexPath) {
         dataSource.remove(at: indexPath.row)
+        saveNotes()
         tableView.reloadData()
     }
 }
@@ -110,6 +123,7 @@ extension NotesViewController: UITableViewDelegate {
 extension NotesViewController: AddNoteDelegate {
     func newNoteAdded(note: ShortNote) {
         dataSource.insert(note, at: 0)
+        saveNotes()
         tableView.reloadData()
     }
 }

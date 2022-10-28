@@ -80,7 +80,7 @@ final class AddNoteCell: UITableViewCell {
     }
 }
 
-// MARK: -UITextViewDelegate
+// MARK: - UITextViewDelegate
 extension AddNoteCell: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {

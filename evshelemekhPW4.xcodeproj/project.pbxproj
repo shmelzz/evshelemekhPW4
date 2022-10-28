@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC30ECE8290BFEA9005D94E7 /* Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC30ECE6290BFEA9005D94E7 /* Note.xcdatamodeld */; };
 		CC73668828F5A49900499E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73668728F5A49900499E23 /* AppDelegate.swift */; };
 		CC73668A28F5A49900499E23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73668928F5A49900499E23 /* SceneDelegate.swift */; };
 		CC73668C28F5A49900499E23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73668B28F5A49900499E23 /* ViewController.swift */; };
@@ -24,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC30ECE7290BFEA9005D94E7 /* Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note.xcdatamodel; sourceTree = "<group>"; };
 		CC73668428F5A49900499E23 /* evshelemekhPW4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = evshelemekhPW4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC73668728F5A49900499E23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC73668928F5A49900499E23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				CC73669B28F5BA7600499E23 /* NotesViewController.swift */,
 				CC7366A728F5C92000499E23 /* NoteCell.swift */,
 				CCC056C428F6D99400EC894A /* AddNoteCell.swift */,
-				CC30ECE6290BFEA9005D94E7 /* Note.xcdatamodeld */,
 				CC7366A528F5C67F00499E23 /* ShortNote.swift */,
 			);
 			path = notes;
@@ -180,7 +177,6 @@
 				CC73669C28F5BA7600499E23 /* NotesViewController.swift in Sources */,
 				CC73668C28F5A49900499E23 /* ViewController.swift in Sources */,
 				CC7366A228F5BE8B00499E23 /* ColorPaletteView.swift in Sources */,
-				CC30ECE8290BFEA9005D94E7 /* Note.xcdatamodeld in Sources */,
 				CC73668828F5A49900499E23 /* AppDelegate.swift in Sources */,
 				CC7366A028F5BE7000499E23 /* UISwiftPin.swift in Sources */,
 				CC7366A428F5BE9F00499E23 /* UIColorComponents.swift in Sources */,
@@ -396,19 +392,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CC30ECE6290BFEA9005D94E7 /* Note.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CC30ECE7290BFEA9005D94E7 /* Note.xcdatamodel */,
-			);
-			currentVersion = CC30ECE7290BFEA9005D94E7 /* Note.xcdatamodel */;
-			path = Note.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CC73667C28F5A49900499E23 /* Project object */;
 }
