@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     private let valueLabel = UILabel()
     let incrementButton = UIButton()
     let colorPaletteView = ColorPaletteView()
+    let notesView = NotesViewController()
     private var buttonsStackView = UIStackView()
     
     private var value: Int = 0
@@ -155,14 +156,13 @@ class ViewController: UIViewController {
     func notesButtonPressed() {
         let generator = UIImpactFeedbackGenerator(style: .rigid)
         generator.impactOccurred()
-        
-        let notesViewController = NotesViewController()
-        if let sheetController = notesViewController.sheetPresentationController {
+
+        if let sheetController = notesView.sheetPresentationController {
           sheetController.detents = [.medium(), .large()]
           sheetController.preferredCornerRadius = 4
           sheetController.prefersGrabberVisible = true
         }
-        present(notesViewController, animated: true, completion: nil)
+        present(notesView, animated: true, completion: nil)
     }
     
     @objc

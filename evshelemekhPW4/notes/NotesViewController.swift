@@ -10,24 +10,20 @@ import UIKit
 final class NotesViewController: UIViewController {
     
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private var dataSource = [
-        ShortNote(text: "a"),
-        ShortNote(text: "b"),
-        ShortNote(text: "c")
-    ]
+    private var dataSource: [ShortNote] = []
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .systemBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         setupView()
     }
     
+    // MARK: - View setup
     private func setupView() {
         setupTableView()
         setupNavBar()
@@ -49,13 +45,9 @@ final class NotesViewController: UIViewController {
         
         tableView.pin(to: self.view)
     }
-    
-    private func handleDelete(indexPath: IndexPath) {
-        dataSource.remove(at: indexPath.row)
-        tableView.reloadData()
-    }
 }
 
+// MARK: - UITableViewDataSource
 extension NotesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,23 +68,45 @@ extension NotesViewController: UITableViewDataSource {
         case 0:
             if let addNewCell = tableView.dequeueReusableCell(
                 withIdentifier: AddNoteCell.reuseIdentifier, for: indexPath) as? AddNoteCell {
-            addNewCell.delegate = self
-            return addNewCell
+                addNewCell.delegate = self
+                return addNewCell
             }
         default:
             let note = dataSource[indexPath.row]
             if let noteCell = tableView.dequeueReusableCell(withIdentifier:
-                NoteCell.reuseIdentifier, for: indexPath) as? NoteCell {
-                    // noteCell.configure(note: note)
-                    return noteCell
+                                                                NoteCell.reuseIdentifier, for: indexPath) as? NoteCell {
+                noteCell.configure(note: note)
+                return noteCell
             }
         }
         return UITableViewCell()
     }
 }
 
-extension NotesViewController: UITableViewDelegate {}
+// MARK: - UITableViewDelegate
+extension NotesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .destructive,
+                                        title: "Delete") { [weak self] (action, view, completionHandler) in
+            self?.handleDelete(indexPath: indexPath)
+            completionHandler(true)
+        }
+        delete.backgroundColor = .systemRed
+        delete.image = UIImage(systemName: "trash")
+        
+        let configuration = UISwipeActionsConfiguration(actions: [delete])
+        return configuration
+    }
+    
+    private func handleDelete(indexPath: IndexPath) {
+        dataSource.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
+}
 
+// MARK: - AddNoteDelegate
 extension NotesViewController: AddNoteDelegate {
     func newNoteAdded(note: ShortNote) {
         dataSource.insert(note, at: 0)
